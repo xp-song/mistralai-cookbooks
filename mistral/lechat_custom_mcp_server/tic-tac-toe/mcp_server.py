@@ -1,16 +1,16 @@
 import os
 import asyncio
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from mcp.server.fastmcp import FastMCP
 from app import Room, rooms, get_ai_move_for_room, get_ai_chat_for_room
 
-load_dotenv()
+load_dotenv(find_dotenv()) 
 
 # --- MCP Server Setup ---
 mcp = FastMCP(
     name="TicTacToeRooms",
     host="0.0.0.0",
-    port=7860,
+    port=7860,  # Standard port for Hugging Face Spaces
 )
 
 # --- Global state for current user session ---

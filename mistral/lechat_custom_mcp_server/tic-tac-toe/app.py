@@ -5,7 +5,11 @@ import logging
 import json
 import uuid
 import time
+from dotenv import load_dotenv, find_dotenv
 from mistralai import Mistral
+
+# Load environment variables from .env file (searches parent directories)
+load_dotenv(find_dotenv())
 
 app = Flask(__name__)
 CORS(app)
